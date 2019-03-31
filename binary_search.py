@@ -35,10 +35,9 @@ S = input().strip().split()
 S = list(map(lambda x: int(x), S))
 
 q = int(input())
-T = input().strip().split()
-T = list(map(lambda x: int(x), T))
-count = 0
+#count = 0
+
 #count = sum(list(map(lambda i: binarySearch2(S, n, T[i]), range(q))))
-for i in range(q):
-    count += binarySearch(S, n, T[i])
-print(count)
+#for t in input().strip().split():
+#    count += binarySearch(S, n, int(t))
+print(sum(map(lambda t: binarySearch(S, n, int(t)), input().strip().split())))
