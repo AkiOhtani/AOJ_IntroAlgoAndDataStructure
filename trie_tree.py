@@ -12,10 +12,10 @@ class TrieTree:
     def insert(self, key):
         node = self.node # 先頭のNodeのオブジェクト
         for c in key:
-            child = node.child.get(c) # 文字コードが配列キーとなる
-            if child == None:
+            if node.child.get(c) == None:
                 node.setChild(c)
             node = node.child[c] # 子ノードに移動
+        node.setChild("\0")
         return True
     
     def find(self, key):
@@ -25,13 +25,16 @@ class TrieTree:
             return False
         else: # ループケース
             for c in key:
-                child = node.child.get(c) # 文字コードが配列キーとなる
-                if child == None:
+                if node.child.get(c) == None: # 文字コードが配列キーとなる
                     print("Not Found")
                     return False
                 node = node.child[c] # 子ノードに移動
-            print("Found")
-            return True
+            if node.child.get("\0"):
+                print("Found")
+                return True
+            else:
+                print("Not Found")
+                return False
 
 def main():
     N = int(input())
