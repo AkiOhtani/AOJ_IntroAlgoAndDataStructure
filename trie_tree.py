@@ -6,14 +6,11 @@ class Node:
     def setChild(self, c):
         self.child[c] = Node() 
 
-null = Node()
-
 ###############################################################################
 ### @ref : https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A9%E3%82%A4%E6%9C%A8
 ###############################################################################
 class TrieTree:
-    global null # 番兵Node
-    node = null
+    node = Node()
 
     def insert(self, key):
         node = self.node # 先頭のNodeのオブジェクト
