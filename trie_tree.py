@@ -10,7 +10,9 @@ def setChild(node, c):
     node.child[c] = Node() 
 
 class TrieTree:
-    node = Node()
+    node = Node
+    def __init__(self):
+        self.node = Node()
 
     def insert(self, key):
         node = self.node # 先頭のNodeのオブジェクト
