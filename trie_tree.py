@@ -2,16 +2,11 @@ import sys
 input = sys.stdin.readline
 
 class Node:
-    value = None
     child = {"" : None}
-    def __init__(self, value):
-        self.value = value
-
     def setChild(self, c):
         self.child[c] = Node(c) 
 
 null = Node(None)
-#null.child = null
 
 ###############################################################################
 ### @ref : https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A9%E3%82%A4%E6%9C%A8
