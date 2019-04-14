@@ -15,7 +15,8 @@ class TrieTree:
             if node.child.get(c) == None:
                 node.setChild(c)
             node = node.child[c] # 子ノードに移動
-        node.setChild("\0")
+        if node.child.get("\0") == None: # 末尾チェック用に"\0"をset
+            node.setChild("\0")
         return True
     
     def find(self, key):
