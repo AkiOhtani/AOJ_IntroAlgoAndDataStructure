@@ -36,19 +36,18 @@ class TrieTree:
     def find(self, key):
         node = self.node # 先頭のNodeのオブジェクト
         if not key: # keyが空文字列の場合
-            "検索文字列が空です"
+            print("検索文字列が空です")
             return False
         else: # ループケース
             key += "\0" # 番兵char
             index = 0
-            while key[index:] != "\0":
+            while key[index] != "\0":
                 c = key[index] # keyが空でないので1文字目を取り出す
                 child = node.child.get(c) # 文字コードが配列キーとなる
                 if child == None:
                     print("Not Found")
                     return False
-                else:
-                    node = node.child[c] # 子ノードに移動
+                node = node.child[c] # 子ノードに移動
                 index += 1
             print("Found")
             return True
