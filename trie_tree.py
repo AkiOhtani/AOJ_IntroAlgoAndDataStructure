@@ -4,9 +4,9 @@ input = sys.stdin.readline
 class Node:
     child = {"" : None}
     def setChild(self, c):
-        self.child[c] = Node(c) 
+        self.child[c] = Node() 
 
-null = Node(None)
+null = Node()
 
 ###############################################################################
 ### @ref : https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A9%E3%82%A4%E6%9C%A8
