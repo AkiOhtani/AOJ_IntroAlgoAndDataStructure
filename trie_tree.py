@@ -3,8 +3,9 @@ input = sys.stdin.readline
 
 class Node:
     child = {"" : None}
-    def setChild(self, c):
-        self.child[c] = Node() 
+
+def setChild(node, c):
+    node.child[c] = Node() 
 
 class TrieTree:
     node = Node()
@@ -13,10 +14,10 @@ class TrieTree:
         node = self.node # 先頭のNodeのオブジェクト
         for c in key:
             if node.child.get(c) == None:
-                node.setChild(c)
+                setChild(node, c)
             node = node.child[c] # 子ノードに移動
-        if node.child.get("\0") == None: # 末尾チェック用に"\0"をset
-            node.setChild("\0")
+        if node.child.get("\0") == None: # 末尾チェック用に"\0"をセット
+            setChild(node, "\0")
         return True
     
     def find(self, key):
