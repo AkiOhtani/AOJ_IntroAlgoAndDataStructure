@@ -2,7 +2,9 @@ import sys
 input = sys.stdin.readline
 
 class Node:
-    child = {"" : None}
+    child = {}
+    def __init__(self):
+        self.child = {"" : None}
 
 def setChild(node, c):
     node.child[c] = Node() 
